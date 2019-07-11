@@ -23,7 +23,7 @@
 # 2. Looking for data: 
 #     - Identify entities (and its attributes) of the problem 
 #     - Collect data that represents entities
-#     - Which hypotheses could I state?
+#     - Which hypotheses could I suppose?
 #     - Explore the data (superficially) to understand it 
 #     - Could I use an algorithm to address the issue or solve it? Which one?
 
