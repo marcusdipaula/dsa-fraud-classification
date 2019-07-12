@@ -31,7 +31,7 @@
 
 #___________ DATA WRANGLING ___________#
 #
-# 3. Data preparation and Exploration (Feature Engineering oriented to the 4th phase)
+# 3. Data preparation and Exploration (Feature Engineering orientated to the 4th and 5th phase)
 #     - Is my dataset tidy?
 #     - Is my dataset clean?
 #     - Which correlations exists between all variables and to the target?
