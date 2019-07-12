@@ -46,7 +46,7 @@
 #     - Can I test my hypotheses?
 #     - 
 #
-# 4. Building and validating models
+# 4. Building and validating models (orientated to the 5th phase)
 #     - Train and test a ML model
 #     - Which performance metrics should I relly on?
 #     - Iteration
