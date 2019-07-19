@@ -38,9 +38,9 @@
 #       
 #     - Could I use an algorithm to address the issue or solve it? Which one?
 #       I plan to use 3 algorithms:
-#         Support Vector Machine (from caret package)
-#         Naive Bayes (from h2o package)
-#         Random forest (from h2o package)
+#           randomForest (from caret package)
+#           Boosted Tree (from caret package)
+#           autoML (from h2o package)
 
 
 
@@ -125,7 +125,7 @@ if(first_time){
           # Loading the tidyverse packages (and installing them before, if not installed)
           if(!require(tidyverse)) {install.packages("tidyverse"); library(tidyverse)}
           
-          # Loading with read_csv (instead of converting to a tibble, so the size
+          # Loading the dataset with read_csv (instead of converting to a tibble, so the size
           # of the object will be smaller)
           ds <- read_csv("ds.csv", 
                           col_types = cols(.default = "i",

@@ -70,7 +70,7 @@ if(want_to_explore) {
           
           }
 
-# Creating 2 new variables (that showed strong correlation to the
+# Creating 2 new variables (that expressed strong correlation to the
 # target variable), removing the some ohter and dropping NA rows
 ds <- ds %>% 
   mutate(day = lubridate::day(ds$click_time),
