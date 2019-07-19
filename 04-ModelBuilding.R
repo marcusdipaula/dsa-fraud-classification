@@ -56,8 +56,8 @@ model_rf <- train(is_attributed ~ .,
                   metric = "Accuracy",
                   trControl = basic_par_rf); rm(basic_par_rf)
 
-# saveRDS(model_rf, "model_rf.RDS")
-
+# Saving the model
+saveRDS(model_rf, "./models/model_rf.RDS")
 # Using the model to predict the test subset
 prediction_rf <- tibble(observed = test$is_attributed,
                         predicted = predict.train(model_rf, newdata = test))
@@ -88,8 +88,8 @@ model_bstTree <- train(is_attributed ~ .,
                        tuneLength = 5,
                        metric = "Accuracy"); rm(basic_par_bstTree)
 
-
-saveRDS(model_bstTree, "model_bstTree.RDS")
+# Saving the model
+saveRDS(model_bstTree, "./models/model_bstTree.RDS")
 # Using the model to predict the test subset
 prediction_bstTree <- tibble(observed = test$is_attributed,
                              predicted = predict.train(model_bstTree, newdata = test))
