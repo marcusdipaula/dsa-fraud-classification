@@ -71,7 +71,7 @@ if(want_to_explore) {
           }
 
 # Creating 2 new variables (that expressed strong correlation to the
-# target variable), removing the some ohter and dropping NA rows
+# target variable), removing some other and dropping NA rows
 ds <- ds %>% 
   mutate(day = lubridate::day(ds$click_time),
          hour = lubridate::hour(ds$click_time) ) %>% 
