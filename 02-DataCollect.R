@@ -65,7 +65,7 @@ first_time <- FALSE
 # https://sqlitestudio.pl/index.rvt                                                                 #
 #                                                                                                   #
 # or use the the pre filtered dataset (setting the first_time object above to FALSE)                #
-# https://sqlitestudio.pl/index.rvt                                                                 #
+# https://github.com/marcusdipaula/dsa-fraud-classification/blob/master/ds.csv                      #
 #                                                                                                   #
 #                                                                                                   #
 #___________________________________________________________________________________________________#
