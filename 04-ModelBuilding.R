@@ -42,9 +42,10 @@ basic_par_rf <- trainControl(
    method = "cv", # The resampling method (cross-validation)
    number = 5, # the number of folds in K-fold cross-validation
    #repeats = 3, # applied only to "repeatedcv" method
-   returnData = F, # a logical for saving the used data into a slot called trainingData
+   returnData = F) # a logical for saving the used data into a slot called trainingData
    #classProbs = TRUE, # Estimate class probabilities, so would be possible to score models using the area under the ROC curve
-   allowParallel = T) # a logical that governs whether train should use parallel processing (if availible)
+   #allowParallel = T, # a logical that governs whether train should use parallel processing (if availible)
+					   # about parallel processing in windows: # http://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/parallel.html
    #sampling = "smote") # balance the classes prior to model fitting
 
 # Training the random forest model
@@ -74,9 +75,10 @@ basic_par_bstTree <- trainControl(
     number = 5, # the number of folds in K-fold cross-validation
     #repeats = 3, # applied only to "repeatedcv" method
     search = "random", # To use a random sample of possible tuning parameter combinations
-    returnData = F, # a logical for saving the used data into a slot called trainingData
+    returnData = F) # a logical for saving the used data into a slot called trainingData
     #classProbs = TRUE, # Estimate class probabilities, so would be possible to score models using the area under the ROC curve
-    allowParallel = T) # a logical that governs whether train should use parallel processing (if availible)
+    #allowParallel = T, # a logical that governs whether train should use parallel processing (if availible)
+						# about parallel processing in windows: # http://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/parallel.html
     #sampling = "smote") # balance the classes prior to model fitting
 
 
