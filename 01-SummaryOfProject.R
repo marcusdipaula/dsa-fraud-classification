@@ -20,11 +20,11 @@
 #     - How could I use the available data to help them achieve this scenario?
 #     - Why solve this problem? (purpose)
 #
-# 2. Looking for data: 
-#     - Identify entities (and its attributes) of the problem 
+# 2. Looking for data:
+#     - Identify entities (and its attributes) of the problem
 #     - Collect data that represents entities
 #     - Which hypotheses could I suppose?
-#     - Explore the data (superficially) to understand it 
+#     - Explore the data (superficially) to understand it
 #     - Could I use an algorithm to address the issue or solve it? Which one?
 
 
@@ -44,11 +44,11 @@
 #     - Should I dummy coding categorical variables? Which effects would it have?
 #     - Should I standardize numerical variables? Which effects would it have?
 #     - Can I test my hypotheses?
-#     - 
+#     -
 #
 # 4. Building and validating models (orientated to the 5th phase)
 #     - Train and test a ML model
-#     - Which performance metrics should I relly on?
+#     - Which performance metrics should I rely on?
 #     - Iteration
 
 
@@ -59,7 +59,7 @@
 #     - Data StoryTelling
 #     - How can I deploy the model to production?
 #     - Which strategies should I consider?
-#     - An overview of what should be considered: 
+#     - An overview of what should be considered:
 # https://christophergs.github.io/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
 
 
@@ -70,21 +70,21 @@
 
 # 1. Problem statement and comprehension of the context
 #     - What am I trying to solve?
-#       Predict/prevent potentially fraudulent clicks, characterized by lots of cliks
+#       Predict/prevent potentially fraudulent clicks, characterized by lots of clicks
 #       but none installed apps.
 #
 #     - Who will benefit of/is asking for this solution?
 #       The Mobile Advertising Monitoring team, from the TalkingData company.
 #       The customers who paid for advertising through mobile marketing campaigns.
-#       
+#
 #     - What would be the ideal scenario for them?
-#       To know, beforehand, who could (has the highest probability of) be a fraud cliker.
+#       To know, beforehand, who could (has the highest probability of) be a fraud clicker.
 #       To pay the right amount for (true) clicks.
-#       
+#
 #     - How could I use the available data to help them achieve this scenario?
 #       By developing visualizations that would help understand what historical data is saying
 #       and by creating a predictive machine learning model that could classify each click.
-#       
+#
 #     - Why solve this problem? (purpose)
 #       To help develop a data-driven culture and to show that crime does not pay (lol).
-#       
+#
