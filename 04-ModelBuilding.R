@@ -106,7 +106,7 @@ confusionMatrix(prediction_bstTree$predicted, prediction_bstTree$observed); rm(p
 # Mor info at:
 # https://github.com/h2oai/h2o-tutorials/blob/master/h2o-world-2017/automl/R/automl_binary_classification_product_backorders.Rmd
 
-# Loading the h2o package
+# Loading the h2o package (and installing it, if not installed)
 if(!require(h2o)) {install.packages("h2o"); library(h2o)}
 
 # Initializing and connecting to a h2o instance
@@ -150,10 +150,3 @@ h2o.saveModel(aml@leader, path = "./auto_ml/")
 
 # Saving the leader model in a format called MOJO, that is optimized for production
 h2o.download_mojo(aml@leader, path = "./auto_ml/")
-
-
-
-
-
-
-
