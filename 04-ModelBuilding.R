@@ -87,11 +87,35 @@ model_rf <- train(is_attributed ~ .,
 # Saving the model
 saveRDS(model_rf, "./models/model_rf.RDS")
 # Using the model to predict the test subset
-prediction_rf <- tibble(observed = test$is_attributed,
-                        predicted = predict.train(model_rf, newdata = test))
+prediction_rf <- bind_cols(predict.train(model_rf,
+                                          newdata = test,
+                                          type = "prob"),
+                            tibble(observed = test$is_attributed,
+                                   predicted = predict.train(model_rf, newdata = test)
+                                   )
+                           ) %>% as_tibble()
 
 # Viewing the confusion matrix
-confusionMatrix(prediction_rf$predicted, prediction_rf$observed); rm(prediction_rf)
+confusionMatrix(prediction_rf$predicted, prediction_rf$observed)
+
+# Loading plotROC package (and installint it before, if not installed)
+if(!require(plotROC)) {install.packages("plotROC"); library(plotROC)}
+# More info about this package at:
+# https://cran.r-project.org/web/packages/plotROC/vignettes/examples.html
+
+# Basic ROC plot
+basic_ROC_plot_rf <- ggplot(prediction_rf,
+                            aes(d = observed,
+                                m = yes)) +
+                     geom_roc(n.cuts = 0) +
+                     style_roc(theme = theme_grey)
+
+# ROC plot with the AUC calculated
+basic_ROC_plot_rf +
+    annotate("text", x = .75, y = .25,
+             label = paste("AUC =", round(calc_auc(basic_ROC_plot_rf)$AUC, 4))
+    )
+
 
 #_______________________________________Algorithm_02______________________________________#
 
@@ -143,10 +167,11 @@ model_bstTree <- train(is_attributed ~ .,
 saveRDS(model_bstTree, "./models/model_bstTree.RDS")
 # Using the model to predict the test subset
 prediction_bstTree <- tibble(observed = test$is_attributed,
-                             predicted = predict.train(model_bstTree, newdata = test))
-
+                             predicted = predict.train(model_bstTree, 
+                                                       newdata = test))
+                      
 # Viewing the confusion matrix
-confusionMatrix(prediction_bstTree$predicted, prediction_bstTree$observed); rm(prediction_bstTree)
+confusionMatrix(prediction_bstTree$predicted, prediction_bstTree$observed)
 
 
 #___________________________________________________________________________
