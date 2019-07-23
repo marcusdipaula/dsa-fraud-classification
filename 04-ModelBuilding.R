@@ -56,6 +56,8 @@ test <- small_ds[-index,]; rm(index, small_ds)
 
 # Setting parameters that further control how the model will be created
 # More at: http://topepo.github.io/caret/model-training-and-tuning.html#basic-parameter-tuning
+# https://www.rdocumentation.org/packages/caret/versions/6.0-84/topics/trainControl
+
 basic_par_rf <- trainControl(method = "cv", # The resampling method (cross-validation)
 
                              number = 5, # the number of folds in K-fold cross-validation, so we have 5-fold
@@ -67,7 +69,9 @@ basic_par_rf <- trainControl(method = "cv", # The resampling method (cross-valid
                              # An illustration: https://www.evernote.com/l/AGKmXIbis1dHSbR_j9dblVk-t3klmWsL_i0/
 
                              returnData = F) # a logical for saving the used data into a slot called trainingData
-                             #classProbs = TRUE, # Estimate class probabilities, so would be possible to score models using the area under the ROC curve
+
+                             #classProbs = TRUE, # if available in the algorithm, should class probabilities be
+                             # computed for classification models (along with predicted values) in each resample?
 
                              #allowParallel = T, # a logical that governs whether train should use parallel processing (if availible)
                           	 # about parallel processing: # http://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/parallel.html
@@ -137,6 +141,8 @@ basic_ROC_plot_rf +
 
 # Setting parameters that further control how the model will be created
 # More at: http://topepo.github.io/caret/model-training-and-tuning.html#basic-parameter-tuning
+# https://www.rdocumentation.org/packages/caret/versions/6.0-84/topics/trainControl
+
 basic_par_bstTree <- trainControl(method = "cv", # The resampling method (cross-validation)
 
                                   number = 5, # the number of folds in K-fold cross-validation
@@ -147,7 +153,8 @@ basic_par_bstTree <- trainControl(method = "cv", # The resampling method (cross-
 
                                   returnData = F) # a logical for saving the used data into a slot called trainingData
 
-                                  #classProbs = TRUE, # Estimate class probabilities, so would be possible to score models using the area under the ROC curve
+                                  #classProbs = TRUE, # if available in the algorithm, should class probabilities be
+                                  # computed for classification models (along with predicted values) in each resample?
 
                                   #allowParallel = T, # a logical that governs whether train should use parallel processing (if availible)
                               		# about parallel processing in windows: # http://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/parallel.html
@@ -167,9 +174,9 @@ model_bstTree <- train(is_attributed ~ .,
 saveRDS(model_bstTree, "./models/model_bstTree.RDS")
 # Using the model to predict the test subset
 prediction_bstTree <- tibble(observed = test$is_attributed,
-                             predicted = predict.train(model_bstTree, 
+                             predicted = predict.train(model_bstTree,
                                                        newdata = test))
-                      
+
 # Viewing the confusion matrix
 confusionMatrix(prediction_bstTree$predicted, prediction_bstTree$observed)
 
