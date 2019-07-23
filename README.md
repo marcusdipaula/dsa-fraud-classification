@@ -81,6 +81,7 @@ I am challenged to build an algorithm that predicts whether a user will download
 
 ### 4. Confusion Matrix and statistics on Random Forest predictions
 <img src="Plots/prediction_rf.PNG" />
+<img src="Plots/AUROC_model_rf.png" />
 
 ### 5. Confusion Matrix and statistics on Boosted Tree predictions
 <img src="Plots/prediction_bstTree.PNG" />
