@@ -174,7 +174,7 @@ prediction_bstTree <- tibble(observed = test$is_attributed,
 confusionMatrix(prediction_bstTree$predicted, prediction_bstTree$observed)
 
 
-#___________________________________________________________________________
+#_______________________________________Algorithm_03______________________________________#
 
 # Auto ML with h2o package
 # Mor info at:
